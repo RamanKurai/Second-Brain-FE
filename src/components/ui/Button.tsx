@@ -7,7 +7,9 @@ interface ButtonProps {
     size: "sm" | "md" | "lg",
     text : string,
     startIcon?: ReactElement,
-    endIcon?: ReactElement,
+    onClick?: () => void;
+    fullWidth?: boolean;
+    loading?: boolean;
 }
 
 const variantStyles = {
@@ -15,17 +17,22 @@ const variantStyles = {
   "secondary" : " bg-purple-600 text-white"
 }
 
-const defaultStyles = "rounded-md flex items-center"
+const defaultStyles = "rounded-md flex items-center justify-center min-w-[161px]";
 
 const sizeStyles = {
   "lg": "px-8 py-4 text-xl rounded-xl",
-  "md": "px-4 py-2 text-md rounded-md",
-  "sm": "px-2 py-2 text-sm rounded-sm",
+  "md": "px-6 py-3 text-md rounded-lg",
+  "sm": "px-2 py-2 text-md rounded-sm",
 }
 
-export const Button = (props :ButtonProps) => {
-  return <button className={`${variantStyles[props.variant]} ${defaultStyles}  
-  ${sizeStyles[props.size]}`}  >
-     {props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null} {props.text}
+export const Button = ({variant , size , text , startIcon, loading , onClick , fullWidth} :ButtonProps) => {
+  return <button onClick={onClick}
+  className={`${variantStyles[variant]} ${defaultStyles}  
+  ${sizeStyles[size]} ${fullWidth ? "w-full" : ""}  ${loading ? "opacity-45" : ""}`}
+  disabled={loading}>
+     {startIcon ? <span className="pr-2">{startIcon}</span> : null} 
+     <div>
+     {text}
+     </div> 
   </button>
 }

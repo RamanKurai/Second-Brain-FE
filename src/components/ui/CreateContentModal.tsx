@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { CrossIcon } from "../../icons/CrossIcon";
 import { Button } from "./Button";
+import { Input } from "./Input";
 
 export const CreateContentModal = ({ open, onClose }) => {
     const modalRef = useRef(null);
@@ -38,7 +39,7 @@ export const CreateContentModal = ({ open, onClose }) => {
                         <Input placeholder={"Link"} />
                     </div>
                     <div className="flex justify-center">
-                        <Button variant="primary" text="Submit" />
+                        <Button variant="primary" text="Submit" size="md" />
                     </div>
                 </span>
             </div>     
@@ -47,14 +48,4 @@ export const CreateContentModal = ({ open, onClose }) => {
 </div>
 }
 
-function Input({ onChange , placeholder }) {
-  return (
-    <div className="mb-2">
-      <input
-        type="text"
-        placeholder={placeholder}
-        className="px-4 py-2 border rounded w-full"
-      />
-    </div>
-  );
-}
+
