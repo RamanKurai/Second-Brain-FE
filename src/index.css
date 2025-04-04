@@ -4,7 +4,13 @@
   --color-purple-300: #e0e7fe;
   --color-purple-500: #3e38a7;
   --color-purple-600: #5046e4;
+  --color-gray-50 : rgba(255, 255, 255, 0.5);
+  --color-gray-100 : #eeeeef;
+  --color-gray-200 : #e6e9ed;
+  --color-gray-600 : #95989c;
 }
+
+
 
 .bg-purple-300 {
   background-color: var(--color-purple-300);

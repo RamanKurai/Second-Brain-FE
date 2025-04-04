@@ -17,7 +17,7 @@ const variantStyles = {
   "secondary" : " bg-purple-600 text-white"
 }
 
-const defaultStyles = "rounded-md flex items-center justify-center min-w-[161px]";
+const defaultStyles = "rounded-md flex items-center justify-center min-w-[161px] cursor-pointer";
 
 const sizeStyles = {
   "lg": "px-8 py-4 text-xl rounded-xl",
