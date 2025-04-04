@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { CreateContentModal } from '../components/ui/CreateContentModal'
 import { PlusIcon } from '../icons/PlusIcon'
 import { ShareIcon } from '../icons/ShareIcon'
 import { SideBar } from '../components/ui/SideBar'
+import { useContent } from '../hooks/useContent'
 
 function DashBoard() {
   const [modalOpen , setModalOpen] = useState(false)
+  const {contents , refresh} = useContent();
+
+  useEffect(() => {
+    refresh();
+} , [modalOpen])
   return (
     <>
     <div>
@@ -20,11 +26,12 @@ function DashBoard() {
    <Button  size='sm' variant={'primary'} text={'Share Brain'} startIcon={<ShareIcon size='md' />}  />
    <Button onClick={()=>  setModalOpen(true) } size='md' variant={'secondary'} text={'Add Content'} startIcon={<PlusIcon size='md' />}   />
    </div>
-    <div className='flex gap-4'>
-    <Card type="twitter" link='https://x.com/Aadhithya_D2003/status/1906969232035725680' 
-    title='First Tweet'/>
-     <Card type="youtube" link='https://www.youtube.com/watch?v=Ro9i0OrcDgI' 
-    title='Youtube Vedio'/>
+    <div className='flex gap-4 flex-wrap'>
+    {contents.map(({type, link, title}) => <Card 
+            type={type}
+            link={link}
+            title={title}
+        />)}
     </div>
     </div>
     </div>
