@@ -1,9 +1,9 @@
 import { ShareIcon } from "../../icons/ShareIcon";
 
 interface CardProps {
-  title: string;
-  link: string;
-  type: "twitter" | "youtube";
+  title?: string;
+  link?: string;
+  type?: "twitter" | "youtube";
 }
 
 export const Card = ({ title, link, type }: CardProps) => {

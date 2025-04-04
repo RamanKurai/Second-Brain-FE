@@ -6,14 +6,21 @@ import { PlusIcon } from '../icons/PlusIcon'
 import { ShareIcon } from '../icons/ShareIcon'
 import { SideBar } from '../components/ui/SideBar'
 import { useContent } from '../hooks/useContent'
+import { useNavigate } from 'react-router-dom'
 
 function DashBoard() {
   const [modalOpen , setModalOpen] = useState(false)
   const {contents , refresh} = useContent();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    refresh();
-} , [modalOpen])
+    const token = localStorage.getItem("token"); 
+    if (!token) {
+      navigate("/signin");
+    } else {
+      refresh();
+    }
+  }, [modalOpen]);
   return (
     <>
     <div>

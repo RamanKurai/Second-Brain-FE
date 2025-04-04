@@ -10,8 +10,6 @@
   --color-gray-600 : #95989c;
 }
 
-
-
 .bg-purple-300 {
   background-color: var(--color-purple-300);
 }
@@ -22,4 +20,10 @@
 
 .bg-purple-600 {
   background-color: var(--color-purple-600);
+}
+
+@layer utilities {
+  .gradient-title {
+    @apply bg-gradient-to-br from-purple-600 to-purple-400 bg-clip-text tracking-tighter text-transparent pb-4 pr-2;
+  }
 }

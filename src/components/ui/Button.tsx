@@ -14,7 +14,7 @@ interface ButtonProps {
 
 const variantStyles = {
   "primary" : "bg-purple-300 text-purple-600",
-  "secondary" : " bg-purple-600 text-white"
+  "secondary" : " bg-purple-700 text-white"
 }
 
 const defaultStyles = "rounded-md flex items-center justify-center min-w-[161px] cursor-pointer";
