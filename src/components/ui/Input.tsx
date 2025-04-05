@@ -1,17 +1,16 @@
-interface InputProps { 
-  placeholder: string; 
-  reference?: any;
+interface InputProps {
+  reference: any;
+  placeholder: string;
+  className?: string;
+  type?: string; 
 }
-
-export function Input({ placeholder, reference }: InputProps) {
+export function Input({ reference, placeholder, className, type = "text" }: InputProps) {
   return (
-    <div className="w-full" >
-      <input
-        ref={reference}
-        placeholder={placeholder}
-        type="text"
-        className="w-full px-4 py-3 border-2 border-purple-900 rounded-lg text-lg m-2 text-center placeholder-gray-500"
-      />
-    </div>
+    <input
+      ref={reference}
+      type={type} 
+      placeholder={placeholder}
+      className={`w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:outline-none cursor-pointer focus:ring-2 focus:ring-[#7950f2] transition-all duration-200 max-[640px]:px-4 max-[640px]:py-1.5 max-[640px]:text-sm ${className || ""}`}
+    />
   );
 }
