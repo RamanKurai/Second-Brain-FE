@@ -22,7 +22,8 @@ export const Landing = () => {
     <>
       <div className="bg-purple-300">
         <div className="flex justify-between items-center m-auto p-4">
-          <div className="flex items-center gap-2.5">
+          <div
+          className="flex items-center gap-2.5">
             <img src={brain} alt="Logo" width="40px" height="40px" />
             <h2 className="text-2xl font-bold gradient-title pt-2.5">
               Brainly

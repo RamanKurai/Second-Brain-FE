@@ -17,7 +17,7 @@ const variantStyles = {
   "secondary" : " bg-purple-700 text-white"
 }
 
-const defaultStyles = "rounded-md flex items-center justify-center min-w-[161px] cursor-pointer";
+const defaultStyles = "rounded-md flex items-center justify-center  cursor-pointer";
 
 const sizeStyles = {
   "lg": "px-8 py-4 text-xl rounded-xl",
@@ -25,14 +25,23 @@ const sizeStyles = {
   "sm": "px-2 py-2 text-md rounded-sm",
 }
 
-export const Button = ({variant , size , text , startIcon, loading , onClick , fullWidth} :ButtonProps) => {
-  return <button onClick={onClick}
-  className={`${variantStyles[variant]} ${defaultStyles}  
-  ${sizeStyles[size]} ${fullWidth ? "w-full" : ""}  ${loading ? "opacity-45" : ""}`}
-  disabled={loading}>
-     {startIcon ? <span className="pr-2">{startIcon}</span> : null} 
-     <div>
-     {text}
-     </div> 
-  </button>
-}
+export const Button = ({variant , size , text , startIcon, loading , onClick , fullWidth} : ButtonProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        ${variantStyles[variant]} 
+        ${defaultStyles}  
+        ${sizeStyles[size]} 
+        ${fullWidth ? "w-full" : ""} 
+        ${loading ? "opacity-45" : ""}
+      `}
+      disabled={loading}
+    >
+      {startIcon ? <span className="pr-2">{startIcon}</span> : null} 
+      <div>
+        {text}
+      </div> 
+    </button>
+  );
+};
