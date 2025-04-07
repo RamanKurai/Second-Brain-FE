@@ -1,3 +1,13 @@
+declare global {
+  interface Window {
+    twttr?: {
+      widgets: {
+        load: (element?: HTMLElement | null) => void;
+      };
+    };
+  }
+}
+
 import { useEffect, useRef } from "react";
 import axios from "axios";
 import { TrashIcon } from "../../icons/Trash";
@@ -20,7 +30,7 @@ export const Card = ({ title, link, type, contentId , showDelete = true}: CardPr
     if (type === "twitter" && window?.twttr?.widgets) {
       window.twttr.widgets.load(twitterRef.current);
     }
-  }, [link]);
+  }, [link , type]);
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure to delete this post?")) {

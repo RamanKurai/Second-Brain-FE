@@ -9,11 +9,12 @@ import { useContent } from '../hooks/useContent';
 import { useNavigate } from 'react-router-dom';
 import { ShareBrainModel } from '../components/ui/ShareBrainModel';
 
+
 function DashBoard() {
-  const [modalOpen, setModalOpen] = useState(null); 
+  const [modalOpen, setModalOpen] = useState<"share" | "create" | null>(null);
   const { contents, refresh } = useContent();
   const navigate = useNavigate();
-  const [selectedType, setSelectedType] = useState('all');
+  const [selectedType, setSelectedType] = useState<"all" | "youtube" | "twitter">("all");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -22,7 +23,7 @@ function DashBoard() {
     } else {
       refresh();
     }
-  }, []);
+  }, [navigate, refresh]);
 
   const handleCloseModal = () => {
     setModalOpen(null);
@@ -40,7 +41,6 @@ function DashBoard() {
         <SideBar selectedType={selectedType} onSelect={setSelectedType} />
 
         <div className="flex-1 p-4 md:ml-60 bg-gray-100">
-
           {/* Modals */}
           {modalOpen === 'share' && (
             <ShareBrainModel open={true} onClose={handleCloseModal} />
