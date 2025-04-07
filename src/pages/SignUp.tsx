@@ -40,7 +40,9 @@ export const SignUp = () => {
       <div className="flex flex-col items-center mb-6 mt-[-10px]">
         <div className="flex items-center gap-2">
           <img src={brain} alt="Logo" width="40px" height="40px" />
-          <h2 className="text-2xl font-bold gradient-title pt-2 ">Brainly</h2>
+          <h2 
+          onClick={() => navigate('/')}
+          className="text-2xl font-bold gradient-title pt-2 cursor-pointer">Brainly</h2>
         </div>
         <p className="text-sm text-gray-900 font-semibold mt-1">Save, Organize and Share</p>
       </div>

@@ -10,9 +10,10 @@ interface CardProps {
   link?: string;
   type?: "twitter" | "youtube";
   contentId?: string;
+  showDelete?: boolean;
 }
 
-export const Card = ({ title, link, type, contentId }: CardProps) => {
+export const Card = ({ title, link, type, contentId , showDelete = true}: CardProps) => {
   const twitterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,13 +66,15 @@ export const Card = ({ title, link, type, contentId }: CardProps) => {
             <div className="text-gray-500 pr-2">{RenderIcon()}</div>
             {title}
           </div>
+         {showDelete && (
           <div className="flex items-center gap-2 text-black">
-            <div onClick={handleDelete} className="cursor-pointer">
-              <TrashIcon />
-            </div>
+          <div onClick={handleDelete} className="cursor-pointer">
+            <TrashIcon />
           </div>
         </div>
-
+         )
+         }
+        </div>
         {/* Content Section */}
         <div className="pt-4 ">
           {type === "youtube" && (

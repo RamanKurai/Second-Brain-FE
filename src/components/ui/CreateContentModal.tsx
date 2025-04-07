@@ -63,7 +63,6 @@ export const CreateContentModal = ({
   <div>
     {/* Backdrop */}
     <div className="w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-60 z-[9998]"></div>
-
     {/* Modal container */}
     <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center z-[9999]">
       <div

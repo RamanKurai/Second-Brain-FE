@@ -43,6 +43,7 @@ export function SharePage() {
             title={content.title}
             link={content.link}
             type={content.type}
+            showDelete={false}
           />
         ))}
       </div>
