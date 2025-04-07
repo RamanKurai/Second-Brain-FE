@@ -59,8 +59,8 @@ export const SignUp = () => {
           </h1>
 
           <div className="w-full max-w-md space-y-4">
-            <Input reference={usernameRef} placeholder="Username" />
-            <Input reference={passwordRef} placeholder="Password" />
+            <Input ref={usernameRef} placeholder="Username" />
+            <Input ref={passwordRef} placeholder="Password" />
             <div className="w-full">
               <Button
                 variant="secondary"

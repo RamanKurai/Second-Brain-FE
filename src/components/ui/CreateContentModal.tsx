@@ -77,8 +77,8 @@ export const CreateContentModal = ({
             </div>
           </div>
           <div className="flex flex-col space-y-4 py-2" >
-            <Input reference={titleRef} placeholder={"Title"} />
-            <Input reference={linkRef} placeholder={"Link"} />
+            <Input ref={titleRef} placeholder={"Title"} />
+            <Input ref={linkRef} placeholder={"Link"} />
           </div>
           <div>
             <h1 className="text-lg font-semibold mb-2">Type</h1>
