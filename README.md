@@ -1,54 +1,108 @@
-# React + TypeScript + Vite
+# 🧠 BrainlyShare – Share Your Brain, Simply!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **BrainlyShare**, a modern and minimal app that allows users to create, organize, and securely **share their personal brain content** (like links, notes, etc.) with a simple, elegant UI.
 
-Currently, two official plugins are available:
+This is the **frontend** repository built using React + TypeScript, powered by a clean and responsive UI. Whether you’re a student, researcher, or curious mind — BrainlyShare lets you share what’s in your brain, one link at a time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌟 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✅ **Authentication-based access** to create and manage content  
+🔗 **Generate public shareable links** for selected content  
+🧾 **Beautiful card UI** to display titles, descriptions, and links  
+📤 **Copy-to-clipboard button** for easy sharing  
+🧩 Seamless integration with backend APIs  
+📱 **Responsive design** across all devices  
+🎨 Built with **Tailwind CSS** for speed and flexibility
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Layer      | Technology                    |
+|------------|-------------------------------|
+| Frontend   | React + TypeScript            |
+| Styling    | Tailwind CSS                  |
+| State      | React Hooks                   |
+| Routing    | React Router DOM              |
+| API Calls  | Axios                         |
+| Auth       | JWT (token-based, via backend) |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/brainly-frontend.git
+cd brainly-frontend
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Setup Environment
+Create a config.ts file or update the existing one with your backend API:
+
+ts
+Copy
+Edit
+export const BACKEND_URL = "http://localhost:3000"; // or your deployed backend
+4. Start the App
+bash
+Copy
+Edit
+npm run dev
+The app will run on http://localhost:5173
+
+📁 Project Structure
+bash
+Copy
+Edit
+src/
+├── components/
+│   ├── ui/                # Reusable UI components like Card, Button
+├── pages/
+│   ├── Home.tsx           # Main dashboard for user content
+│   ├── SharePage.tsx      # Public page for shared content
+├── hooks/
+├── utils/
+└── config.ts              # Backend URL config
+✨ UI Preview
+Here’s what your shared page might look like:
+
+vbnet
+Copy
+Edit
+👤 Username’s Shared Brain
+📄 Card 1 | 🔗 link1.com
+📄 Card 2 | 🔗 link2.com
+📄 ...
+Visitors will see only shared content. Personal dashboard is protected via auth.
+
+🔗 Live Demo
+🌐 Check the live site here (if deployed)
+
+🤝 Contributing
+Want to contribute or suggest features? Awesome!
+
+Fork the repo
+
+Create a new branch
+
+Submit a PR with proper description
+
+🛡️ License
+This project is licensed under the MIT License.
+
+📬 Contact
+Built with ❤️ by Raman Kurai
+
+📧 Email: ramankurai27@gmail.com
+
+🐙 GitHub: github.com/RamanKurai
+
+🐦 Twitter: https://x.com/RamanKurai
+
