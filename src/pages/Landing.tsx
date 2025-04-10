@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import brain from "../assets/brain.png";
 import brain2 from "../assets/brain2.png";
