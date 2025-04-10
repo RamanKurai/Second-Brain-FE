@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import { BACKEND_URL } from "../config";
@@ -6,6 +6,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Auth from "../assets/Auth.jpg";
 import brain from "../assets/brain.png";
+
+const [error, setError] = useState("");
 
 export const SignIn = () => {
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -28,10 +30,14 @@ export const SignIn = () => {
         localStorage.setItem("token" , jwt)
         navigate("/dashboard")
 
-        } catch (error) {
-            console.error("Signin error:", error);
-            alert("Signin failed. Please try again.");
-        }
+        } catch (error: any) {
+          console.error("Signin error:", error);
+          if (error.response && error.response.status === 403) {
+              setError("Invalid username or password.");
+          } else {
+              setError("Signin failed. Please try again.");
+          }
+      }
     };
 
     return (
@@ -62,6 +68,9 @@ export const SignIn = () => {
               <div className="w-full max-w-md space-y-4">
                 <Input ref={usernameRef} placeholder="Username" />
                 <Input ref={passwordRef} placeholder="Password" />
+                {error && (
+                  <p className="text-red-600 text-center text-sm font-medium">{error}</p>
+                 )}    
                 <div className="w-full">
                   <Button
                     variant="secondary"
