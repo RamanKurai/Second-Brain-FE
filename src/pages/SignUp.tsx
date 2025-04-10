@@ -33,11 +33,11 @@ export const SignUp = () => {
       alert("You have signed up");
       navigate("/signin");
     } catch (error: any) {
-      console.error("Signin error:", error);
-      if (error.response && error.response.status === 403) {
+      console.error("Signun error:", error);
+      if (error.response) {
           setError("Invalid username or password.");
       } else {
-          setError("Signin failed. Please try again.");
+          setError("Signup failed. Please try again With Strong Password");
       }
   }
   };

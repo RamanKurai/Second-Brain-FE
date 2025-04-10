@@ -33,10 +33,10 @@ export const SignIn = () => {
 
         } catch (error: any) {
           console.error("Signin error:", error);
-          if (error.response && error.response.status === 403) {
+          if (error.response) {
               setError("Invalid username or password.");
           } else {
-              setError("Signin failed. Please try again.");
+              setError("Signin failed. Please try again With Strong Password");
           }
       }
     };
