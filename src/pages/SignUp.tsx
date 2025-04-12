@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../assets/Auth.jpg";
 import brain from "../assets/brain.png";
 
-const [error , setError] = useState("")
 
 export const SignUp = () => {
+  const [error , setError] = useState("")
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
