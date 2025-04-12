@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { TwitterIcon } from "../../icons/TwitterIcon";
 import { YoutubeIcon } from "../../icons/YoutubeIcon";

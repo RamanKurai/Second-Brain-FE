@@ -1,4 +1,3 @@
-import React from "react";
 import { JSX, useEffect, useRef, useState } from "react";
 import { CrossIcon } from "../../icons/CrossIcon";
 import { Input } from "./Input";
