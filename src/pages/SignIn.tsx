@@ -36,7 +36,7 @@ export const SignIn = () => {
           if (error.response) {
               setError("Invalid username or password.");
           } else {
-              setError("Signin failed. Please try again With Strong Password");
+              alert("Signin failed. Please try again With Strong Password");
           }
       }
     };

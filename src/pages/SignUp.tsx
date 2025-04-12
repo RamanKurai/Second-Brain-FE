@@ -37,7 +37,7 @@ export const SignUp = () => {
       if (error.response) {
           setError("Invalid username or password.");
       } else {
-          setError("Signup failed. Please try again With Strong Password");
+          alert("Signup failed. Please try again With Strong Password");
       }
   }
   };
