@@ -64,6 +64,7 @@ export const SignUp = () => {
         <div className="flex flex-col justify-center items-center px-8 py-10 md:w-1/2 w-full bg-purple-300">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
             Create Your Account
+          <p className="pt-5 text-center text-black font-normal">Please Use Strong Password</p>
           </h1>
 
           <div className="w-full max-w-md space-y-4">
