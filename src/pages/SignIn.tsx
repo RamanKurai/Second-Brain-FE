@@ -33,7 +33,7 @@ export const SignIn = () => {
         } catch (error: any) {
           console.error("Signin error:", error);
           if (error.response) {
-            setError("Invalid username or use strong password");
+            setError("Invalid username or Use strong password");
           } else {
               console.error("Signin failed. Please try again With Strong Password");
           }
